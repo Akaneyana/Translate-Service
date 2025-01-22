@@ -1,6 +1,6 @@
-CREATE DATABASE IF NOT EXISTS TranslateService
+CREATE DATABASE IF NOT EXISTS TranslateService;
 
-USE TranslateService
+USE TranslateService;
 
 CREATE TABLE Users (
     User_id INT NOT NULL AUTO_INCREMENT,

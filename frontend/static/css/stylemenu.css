@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: black;
+}
+
+/* Reset some default styling */
+body, ul, li, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333; /* Dark background for the header */
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between nav-branding and nav-menu */
+}
+
+.nav-branding a {
+    color: #fff; /* Logo color */
+    font-size: 1.5rem; /* Logo size */
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex; /* Display nav items in a row */
+    gap: 15px; /* Space between each nav-item */
+}
+
+.nav-menu .nav-item a {
+    color: #fff; /* Text color for links */
+    font-size: 1rem; /* Font size for nav links */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-menu .nav-item a:hover {
+    color: #ff9800; /* Hover color for nav links */
+}
+
+.hamburger {
+    display: none; /* Hidden by default; useful for mobile view */
+}
+
+/* Media Query for Mobile (Optional) */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide menu on smaller screens */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger for mobile view */
+        cursor: pointer;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+}
+

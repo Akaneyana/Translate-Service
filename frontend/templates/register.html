@@ -1,0 +1,39 @@
+{% extends 'menu.html' %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Register</h2>
+    
+    <!-- Display registration status message -->
+    {% if message %}
+        <div class="status-message">
+            <p>{{ message }}</p>
+        </div>
+    {% endif %}
+
+    <!-- Registration Form -->
+    <form action="{{ url_for('register') }}" method="POST">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+{% endblock %}
