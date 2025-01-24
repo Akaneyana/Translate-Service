@@ -3,13 +3,7 @@
 {% block content %}
 <div class="form-container">
     <h2>Register</h2>
-    
-    <!-- Display registration status message -->
-    {% if message %}
-        <div class="status-message">
-            <p>{{ message }}</p>
-        </div>
-    {% endif %}
+    <p>Already Have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
 
     <!-- Registration Form -->
     <form action="{{ url_for('register') }}" method="POST">
@@ -36,4 +30,11 @@
         <button type="submit">Register</button>
     </form>
 </div>
+
+    <!-- Display registration status message -->
+    {% if message %}
+        <div class="status-message">
+            <p>{{ message }}</p>
+        </div>
+    {% endif %}
 {% endblock %}

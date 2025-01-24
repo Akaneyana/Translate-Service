@@ -15,12 +15,27 @@ CREATE TABLE Users (
 CREATE TABLE Orders (
     Order_id INT NOT NULL AUTO_INCREMENT,
     User_id INT NOT NULL,
-    Translation VARCHAR(100) NOT NULL,
+    Book VARCHAR(100) NOT NULL,
+    Language VARCHAR(100) NOT NULL,
+    Note VARCHAR(300),
     OrderDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (Order_id)
+    PRIMARY KEY (Order_id),
     FOREIGN KEY (User_id) REFERENCES Users(User_id)
 );
 
-SELECT Orders.Order_id, Users.FirstName, Orders.OrderDate
-FROM Orders
-INNER JOIN Customers ON Orders.User_id=Users.FirstName;
+SELECT 
+    Users.User_id, 
+    Users.FirstName, 
+    Users.LastName, 
+    Users.Email, 
+    Orders.Order_id, 
+    Orders.Book, 
+    Orders.Language, 
+    Orders.Note, 
+    Orders.OrderDate
+FROM 
+    Users
+INNER JOIN 
+    Orders
+ON 
+    Users.User_id = Orders.User_id;
